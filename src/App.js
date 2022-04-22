@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Tabs from "./components/Tabs";
+import "./App.css";
+import { MyMap, MyMapCity, MyMapSchool, MyMapVacation } from './components/MyMaps';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1>Auf Marios Spuren</h1>
+      <Tabs>
+        <div label="Zuhause">
+          <MyMap lat="53.551086" long="9.993682" height="500" anchorLat="" anchorLong="" />
+        </div>
+        <div label="Schule">
+          <MyMapSchool />
+        </div>
+        <div label="Schönster Strandurlaub">
+          <MyMapVacation />
+        </div>
+        <div label="Lieblingsstadt in Europa">
+          <MyMapCity />
+        </div>
+      </Tabs>
     </div>
   );
 }
